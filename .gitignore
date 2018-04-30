@@ -4,3 +4,5 @@ node_modules/
 .elasticbeanstalk/
 .ebextensions/
 .idea/
+chromium/
+package-lock.json

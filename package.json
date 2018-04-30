@@ -12,9 +12,13 @@
     "body-parser": "~1.18.2",
     "chrome-remote-interface": "~0.24.2",
     "compression": "~1.7.1",
+    "dotenv": "^5.0.1",
     "express": "~4.16.2",
     "he": "~1.1.1",
-    "valid-url": "~1.0.9"
+    "node-windows": "^0.1.14",
+    "prerender-memory-cache": "^1.0.2",
+    "valid-url": "~1.0.9",
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
     "mocha": "^3.4.1",
@@ -22,6 +26,8 @@
   },
   "scripts": {
     "start": "node server.js",
+    "install": "node setup.js --install",
+    "uninstall": "node setup.js --uninstall",
     "test": "./node_modules/.bin/mocha"
   },
   "engines": {
