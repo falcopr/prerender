@@ -15,9 +15,11 @@
     "dotenv": "^5.0.1",
     "express": "~4.16.2",
     "he": "~1.1.1",
+    "moment": "^2.22.1",
     "node-windows": "^0.1.14",
     "prerender-memory-cache": "^1.0.2",
     "valid-url": "~1.0.9",
+    "winston": "^2.4.2",
     "yargs": "^11.0.0"
   },
   "devDependencies": {

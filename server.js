@@ -1,14 +1,13 @@
 #!/usr/bin/env node
-var dotenv = require('dotenv'),
-    prerender = require('./lib'),
-    prerenderMemoryCache = require('prerender-memory-cache');
-
+const dotenv = require('dotenv');
 dotenv.config();
 
-var server = prerender({
-    chromeLocation: process.env.CHROME_LOCATION || './chromium/chrome.exe',
-    logRequests: process.env.ENABLE_LOGGING || false
-});
+let prerender = require('./lib'),
+    prerenderMemoryCache = require('prerender-memory-cache'),
+    server = prerender({
+        chromeLocation: process.env.CHROME_LOCATION || './chromium/chrome.exe',
+        logRequests: process.env.DISABLE_LOGGING || false
+    });
 
 server.use(prerender.sendPrerenderHeader());
 server.use(prerender.removeScriptTags());
