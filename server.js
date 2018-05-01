@@ -6,15 +6,11 @@ var dotenv = require('dotenv'),
 dotenv.config();
 
 var server = prerender({
-    chromeLocation: './chromium/chrome.exe',
-    // Enable this for test purposes
-    // logRequests: true,
-    pageLoadTimeout: 10 * 1000,
-    waitAfterLastRequest: 1000
+    chromeLocation: process.env.CHROME_LOCATION || './chromium/chrome.exe',
+    logRequests: process.env.ENABLE_LOGGING || false
 });
 
 server.use(prerender.sendPrerenderHeader());
-// server.use(prerender.blockResources());
 server.use(prerender.removeScriptTags());
 server.use(prerender.httpHeaders());
 server.use(prerenderMemoryCache);
