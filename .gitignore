@@ -1,5 +1,6 @@
 *.iml
-*.log
+*.log*
+*.log.gz
 node_modules/
 .DS_Store
 .elasticbeanstalk/
@@ -7,3 +8,4 @@ node_modules/
 .idea/
 chromium/
 package-lock.json
+logs/.audit.json
