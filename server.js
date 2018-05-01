@@ -12,7 +12,9 @@ var server = prerender({
 
 server.use(prerender.sendPrerenderHeader());
 server.use(prerender.removeScriptTags());
-server.use(prerender.httpHeaders());
+server.use(prerender.blockResources());
+server.use(prerender.logger());
 server.use(prerenderMemoryCache);
+server.use(prerender.httpHeaders());
 
 server.start();

@@ -5,11 +5,7 @@ var Service = require('node-windows').Service;
 var svc = new Service({
     name: 'Prerender.io Server',
     description: 'Prerender.io Server.',
-    script: `./server.js`,
-    //   nodeOptions: [
-    //     '--harmony',
-    //     '--max_old_space_size=4096'
-    //   ]
+    script: `./server.js`
 });
 
 // Listen for the "install" event, which indicates the
