@@ -3,6 +3,9 @@
 * Create a folder named "chromium"
 * Put the contents for the chromium archive download in there: https://chromium.woolyss.com/
 
+* Download http://nssm.cc/usage
+* Install NSSM and make it available into the paths
+
 # Sources
 * https://www.microsoft.com/en-us/download/details.aspx?id=47333
 * https://www.ugg.li/iis-reverse-ssl-proxy-unter-windows-server-2012r22016-einrichten-schritt-fuer-schritt/

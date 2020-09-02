@@ -1,9 +1,7 @@
-Prerender [![Stories in Ready](https://badge.waffle.io/prerender/prerender.png?label=ready&title=Ready)](https://waffle.io/prerender/prerender)
+Prerender
 ===========================
 
 Prerender is a node server that uses Headless Chrome to render HTML, screenshots, PDFs, and HAR files out of any web page. The Prerender server listens for an http request, takes the URL and loads it in Headless Chrome, waits for the page to finish loading by waiting for the network to be idle, and then returns your content.
-
-Looking for our PhantomJS Prerender server? [Go to our phantomjs branch](https://github.com/prerender/prerender/tree/phantomjs)
 
 ##### The quickest way to run your own prerender server:
 
@@ -40,9 +38,9 @@ Below you will find documentation for our Prerender.io service (website SEO) and
 # Prerender.io
 ###### For serving your prerendered HTML to crawlers for SEO
 
-Prerender adheres to Google's `_escaped_fragment_` proposal, which we recommend you use. It's easy:
-- Just add &lt;meta name="fragment" content="!"> to the &lt;head> of all of your pages
-- If you use hash urls (#), change them to the hash-bang (#!)
+Prerender solves SEO by serving prerendered HTML to Google and other search engines.  It's easy:
+- Just install the appropriate middleware for your app (or check out the source code and build your own)
+- Make sure search engines have a way of discovering your pages (e.g. sitemap.xml and links from other parts of your site or from around the web)
 - That's it! Perfect SEO on javascript pages.
 
 

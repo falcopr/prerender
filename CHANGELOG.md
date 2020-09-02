@@ -2,6 +2,49 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 5.8.0 - 2020-07-27
+### Added
+- added `timeSpentConnectingToBrowser`, `timeSpentOpeningTab`, `timeSpentLoadingUrl`, `timeSpentParsingPage`, `timeUntilError` to `req.prerender` to allow for debugging of certain issues with the server spending too much time in different lifecycle sections
+- added a fix to setHeader warning by splitting headers on any line returns
+
+## 5.7.0 - 2020-07-24
+### Changed
+- added ability to configure the chrome remote debugging port for running more than one instance of chrome on the same server
+- added automatic closing of browser alert dialogs
+- moved some code from responseReceived down to loadingFinished to help more accurately know when content is done downloading
+- removed the deletion of some CSP headers that weren't really causing any issues
+
+## 5.6.0 - 2019-03-27
+### Changed
+- added configurable options for pdf printing to let you override all options necessary using `this.options.pdfOptions`
+- fixed timeouts on redirects
+- added ability to override other express options on the `.listen()` function by passing in an object now instead of just the port
+
+## 5.5.1 - 2019-02-06
+### Changed
+- We were relying on `document.doctype` to return the full doctype string but that string changed in Chrome v72. We now parse the full doctype object directly in order to build the proper doctype and this change is backwards compatible with older Chrome versions.
+
+## 5.5.0 - 2019-02-06
+### Added
+- Added `domContentEventFired` so that `checkIfPageIsDoneLoading` will wait at least for `domContentEventFired` before also waiting for all network requests to finish. This should hopefully take care of any edge cases where a page is saved too early when Chrome doesn't send new network requests during the parsing of a large .js file.
+
+## 5.4.5 - 2018-12-04
+### Changed
+- fixed issue with creating browser tabs in a new context (to clear cookies/local storage)
+- `LOG_REQUESTS` shows console logging from the webpage being loaded
+- fixed `this.options.followRedirect` typo to now be `this.options.followRedirects`
+
+## 5.4.4 - 2018-08-07
+### Changed
+- Updated Mocha to 5.2.0, Sinon to 6.1.4 and a few minor package numbers
+- Added package-lock.json
+
+
+## 5.4.3 - 2018-08-07
+### Changed
+- Removed a check for success in the response of `Target.disposeBrowserContext` to fix an issue with Chrome 68 removing that response object.
+
+
 ## 5.4.2 - 2018-04-05
 ### Changed
 - Removed the `Page.addScriptToEvaluateOnNewDocument({source: 'localStorage.clear()'})` since it seemed to be causing an issue with Chrome in some cases. Going to look for a better fix here since our context should be clearing this already.
