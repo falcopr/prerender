@@ -28,8 +28,6 @@
   },
   "scripts": {
     "start": "node server.js",
-    "install": "node setup.js --install",
-    "uninstall": "node setup.js --uninstall",
     "test": "./node_modules/.bin/mocha"
   },
   "engines": {
