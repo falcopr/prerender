@@ -8,4 +8,5 @@ node_modules/
 .idea/
 chromium/
 package-lock.json
+yarn.lock
 logs/.audit.json
